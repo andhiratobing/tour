@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Dimens dp-->
+    <dimen name="margin2dp">2dp</dimen>
+    <dimen name="margin4dp">4dp</dimen>
+    <dimen name="margin6dp">6dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin12dp">12dp</dimen>
+    <dimen name="margin14dp">14dp</dimen>
+    <dimen name="margin16dp">16dp</dimen>
+    <dimen name="margin18dp">18dp</dimen>
+    <dimen name="margin20dp">20dp</dimen>
+    <dimen name="margin22dp">22dp</dimen>
+    <dimen name="margin24dp">24dp</dimen>
+    <dimen name="margin26dp">26dp</dimen>
+    <dimen name="margin28dp">28dp</dimen>
+
+
+    <!--Dimens sp-->
+    <dimen name="margin2sp">2sp</dimen>
+    <dimen name="margin4sp">4sp</dimen>
+    <dimen name="margin6sp">6sp</dimen>
+    <dimen name="margin8sp">8sp</dimen>
+    <dimen name="margin10sp">10sp</dimen>
+    <dimen name="margin12sp">12sp</dimen>
+    <dimen name="margin14sp">14sp</dimen>
+    <dimen name="margin16sp">16sp</dimen>
+    <dimen name="margin18sp">18sp</dimen>
+    <dimen name="margin20sp">20sp</dimen>
+    <dimen name="margin22sp">22sp</dimen>
+    <dimen name="margin24sp">24sp</dimen>
+    <dimen name="margin26sp">26sp</dimen>
+    <dimen name="margin28sp">28sp</dimen>
+
+
+</resources>

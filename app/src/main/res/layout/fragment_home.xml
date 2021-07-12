@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragment.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarFragmentHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/background_white"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarFragmentHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgUser"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_image_user_default"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="3dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvNameUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/name_user"
+                        android:textColor="@color/color_text"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgUser"
+                        app:layout_constraintStart_toEndOf="@+id/imgUser"
+                        app:layout_constraintTop_toTopOf="@+id/imgUser" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/tvTitleWantGoing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/where_do_you_want_to_go"
+            android:textColor="@color/color_text"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarFragmentHome" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewSearchPlaces"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/margin24dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitleWantGoing"
+            app:layout_constraintStart_toStartOf="@+id/tvTitleWantGoing"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleWantGoing">
+
+
+            <SearchView
+                android:id="@+id/pencarianPengiriman"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:gravity="start"
+                android:iconifiedByDefault="false"
+                android:inputType="text|textCapWords"
+                android:lines="1"
+                android:maxLines="1"
+                android:pointerIcon="hand"
+                android:queryHint="Search for place..."
+                android:searchIcon="@drawable/ic_search"
+                android:textColor="#1A1C4D"
+                android:textDirection="inherit"
+                android:textSize="14sp"
+                android:theme="@style/Widget.AppCompat.SearchView.ActionBar"
+                tools:targetApi="n" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvTopTrips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/top_trips"
+            android:textColor="@color/color_text"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/cardviewSearchPlaces"
+            app:layout_constraintTop_toBottomOf="@+id/cardviewSearchPlaces" />
+
+        <Button
+            android:id="@+id/btnExplore"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_background_favorite_red"
+            android:drawableEnd="@drawable/ic_arrow_small_right"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/explore"
+            android:textAllCaps="false"
+            android:textColor="@color/color_text_light"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTopTrips"
+            app:layout_constraintEnd_toEndOf="@+id/cardviewSearchPlaces"
+            app:layout_constraintTop_toTopOf="@+id/tvTopTrips" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopTrips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTopTrips" />
+
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/categories"
+            android:textColor="@color/color_text"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvTopTrips" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_white"
+            app:tabIndicatorColor="@color/color_text"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="3dp"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabMode="fixed"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/color_text"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayoutCategories" />
+
+
+        <!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/fragmentContentCategories"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tvCategory" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
