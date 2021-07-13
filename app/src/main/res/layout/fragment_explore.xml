@@ -9,7 +9,6 @@
 
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarExplore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -29,11 +28,9 @@
 
 
             <TextView
-                android:id="@+id/tvNameUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Explore"
+                android:text="@string/explore"
                 android:textColor="@color/color_text"
                 android:textSize="16sp" />
 

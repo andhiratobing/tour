@@ -3,12 +3,10 @@ package com.ratobing.travel.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.ratobing.travel.databinding.ItemTripsBinding
 import com.ratobing.travel.models.TravelData
 
-class MountainsAdapter(val mountainsList:ArrayList<TravelData>):
+class MountainsAdapter(private val mountainsList:ArrayList<TravelData>):
     RecyclerView.Adapter<MountainsAdapter.MountainsViewHolder>() {
 
 
@@ -16,13 +14,13 @@ class MountainsAdapter(val mountainsList:ArrayList<TravelData>):
         : RecyclerView.ViewHolder(binding.root){
             fun bind(data: TravelData){
                 with(binding){
-                    tvLocationName.text = data.locationName
+                    tvName.text = data.locationName
                     tvCategoryName.text = data.category
 
-                    Glide.with(itemView.context)
-                        .load(data.locationImage)
-                        .apply(RequestOptions().override(55, 55))
-                        .into(ivLocationImage)
+//                    Glide.with(itemView.context)
+//                        .load(data.locationImage)
+//                        .apply(RequestOptions().override(55, 55))
+//                        .into(ivLocationImage)
                 }
             }
     }

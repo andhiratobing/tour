@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_top_trips"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin16dp"
     android:backgroundTint="@color/white"
     app:cardCornerRadius="14dp"
     app:cardElevation="1dp">
@@ -15,40 +16,40 @@
 
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
             android:padding="@dimen/margin16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/ivLocationImage"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:id="@+id/ivImage"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_sample1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:riv_border_color="#333333"
                 app:riv_corner_radius="@dimen/margin20dp"
                 app:riv_mutate_background="true"
-                app:riv_oval="false" />
+                app:riv_oval="false"
+                tools:src="@drawable/img_sample1" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_margin="@dimen/margin16dp"
-                android:background="@drawable/color_background_price">
+                android:background="@drawable/color_background_price"
+                android:gravity="end">
 
                 <TextView
-                    android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:fontFamily="@font/poppins"
                     android:hint="@string/_120"
                     android:letterSpacing="0.09"
                     android:paddingStart="@dimen/margin12dp"
@@ -63,16 +64,15 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/tvLocationName"
+            android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
             android:hint="@string/banjir_kanal"
-            android:fontFamily="@font/poppins_semibold"
             android:textColor="@color/black"
             android:textSize="@dimen/margin18sp"
-            android:layout_marginStart="@dimen/margin16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frameLayout"/>
+            app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
         <TextView
             android:id="@+id/tvCategoryName"
@@ -80,24 +80,23 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin16dp"
             android:layout_marginBottom="@dimen/margin16dp"
-            android:fontFamily="@font/poppins"
             android:hint="@string/camp"
             android:textColor="@color/color_text"
             android:textSize="@dimen/margin18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLocationName" />
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
 
         <ImageButton
-            android:id="@+id/ivFavorite"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="@dimen/margin16dp"
             android:background="@drawable/color_background_favorite_red"
+            android:contentDescription="@string/image_favorite"
             android:src="@drawable/ic_favorite_red"
             app:layout_constraintBottom_toBottomOf="@+id/tvCategoryName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvLocationName" />
+            app:layout_constraintTop_toTopOf="@+id/tvName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

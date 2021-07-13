@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import com.ratobing.travel.R
 import com.ratobing.travel.databinding.ItemTripsBinding
 import com.ratobing.travel.models.TravelData
 
@@ -15,14 +15,17 @@ class TopTripAdapter(private var topTrip: ArrayList<TravelData>):
         : RecyclerView.ViewHolder(binding.root)  {
             fun bind(data: TravelData){
                 with(binding){
-                    tvLocationName.text = data.locationName
+                    tvName.text = data.name
                     tvCategoryName.text = data.category
 
 
+//                    val requestOptions = RequestOptions().placeholder(R.drawable.ic_launcher_background)
+//                        .error(R.drawable.ic_launcher_background)
+
                     Glide.with(itemView.context)
                         .load(data.locationImage)
-                        .apply(RequestOptions().override(55, 55))
-                        .into(ivLocationImage)
+                        .placeholder(R.drawable.placeholder_image)
+                        .into(ivImage)
                 }
             }
     }

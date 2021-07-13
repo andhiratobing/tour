@@ -1,15 +1,13 @@
 package com.ratobing.travel.models
 
-import androidx.annotation.DrawableRes
 
 data class TravelData(
-    val id: String,
     val category : String,
+    val name: String,
     val locationName: String,
-    @DrawableRes
-    val locationImage: Int?,
+    val locationImage: String,
     val openTime: String?,
-    val ratingLocation: Int?,
+    val ratingLocation: Double?,
     val overview: String?,
     val reviews: String?
 )
