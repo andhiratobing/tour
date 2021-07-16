@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/explore"
+                android:fontFamily="@font/poppins"
                 android:textColor="@color/color_text"
                 android:textSize="16sp" />
 

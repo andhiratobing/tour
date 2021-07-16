@@ -34,7 +34,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:riv_border_color="#333333"
-                app:riv_corner_radius="@dimen/margin20dp"
+                app:riv_corner_radius="20dp"
                 app:riv_mutate_background="true"
                 app:riv_oval="false"
                 tools:src="@drawable/img_sample1" />
@@ -68,7 +68,8 @@
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin16dp"
+            android:paddingStart="@dimen/margin16dp"
+            android:paddingEnd="@dimen/margin16dp"
             android:fontFamily="@font/poppins_semibold"
             android:hint="@string/banjir_kanal"
             android:textColor="@color/black"
@@ -93,7 +94,8 @@
             android:id="@+id/tvCategoryName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin16dp"
+            android:paddingStart="@dimen/margin16dp"
+            android:paddingEnd="@dimen/margin16dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="@dimen/margin16dp"
             android:fontFamily="@font/poppins_medium"
@@ -103,6 +105,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

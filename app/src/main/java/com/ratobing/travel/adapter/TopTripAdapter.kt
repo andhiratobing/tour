@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ratobing.travel.R
-import com.ratobing.travel.databinding.ItemTripsBinding
+import com.ratobing.travel.databinding.ItemTopTripsBinding
 import com.ratobing.travel.models.TravelData
 
 class TopTripAdapter(private var topTrip: ArrayList<TravelData>):
     RecyclerView.Adapter<TopTripAdapter.TopTripViewHolder>(){
 
-    inner class TopTripViewHolder(private var binding: ItemTripsBinding)
+    inner class TopTripViewHolder(private var binding: ItemTopTripsBinding)
         : RecyclerView.ViewHolder(binding.root)  {
             fun bind(data: TravelData){
                 with(binding){
@@ -31,7 +31,7 @@ class TopTripAdapter(private var topTrip: ArrayList<TravelData>):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopTripViewHolder {
-        val binding = ItemTripsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemTopTripsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TopTripViewHolder(binding)
     }
 

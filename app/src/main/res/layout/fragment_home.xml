@@ -55,6 +55,7 @@
                         android:text="@string/name_user"
                         android:textColor="@color/color_text"
                         android:textSize="16sp"
+                        android:fontFamily="@font/poppins_medium"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imgUser"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -73,6 +74,7 @@
             android:text="@string/where_do_you_want_to_go"
             android:textColor="@color/color_text"
             android:textSize="26sp"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarFragmentHome" />
@@ -119,6 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/top_trips"
+            android:fontFamily="@font/poppins_semibold"
             android:textColor="@color/color_text"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/cardviewSearchPlaces"
@@ -133,6 +136,7 @@
             android:drawableEnd="@drawable/ic_arrow_small_right"
             android:text="@string/explore"
             android:textAllCaps="false"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/color_text_light"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvTopTrips"
@@ -144,11 +148,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin16dp"
+            android:paddingStart="@dimen/margin16dp"
+            android:paddingEnd="@dimen/margin16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTopTrips"
             tools:itemCount="1"
-            tools:listitem="@layout/item_trips" />
+            tools:listitem="@layout/item_top_trips" />
 
 
         <TextView
@@ -161,6 +167,7 @@
             android:text="@string/categories"
             android:textColor="@color/color_text"
             android:textSize="18sp"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvTopTrips" />
@@ -189,9 +196,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tabLayoutCategories"/>
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

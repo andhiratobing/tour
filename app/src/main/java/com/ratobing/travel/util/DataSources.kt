@@ -4,7 +4,7 @@ import com.ratobing.travel.models.TravelData
 
 object DataSources{
 
-    fun setMontains(): ArrayList<TravelData>{
+    fun setMountains(): ArrayList<TravelData>{
         val list = ArrayList<TravelData>()
         list.add(
             TravelData(
@@ -328,6 +328,144 @@ object DataSources{
         return list
     }
 
+    fun setMuseum(): ArrayList<TravelData>{
+        val list = ArrayList<TravelData>()
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Angkut",
+                locationName = "Malang",
+                locationImage = "https://bit.ly/3hJI8IL",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Nasional Indonesia",
+                locationName = "Jakarta",
+                locationImage = "https://bit.ly/3kqKOgf",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Fatahillah",
+                locationName = "Jakarta",
+                locationImage = "https://bit.ly/3kEvTiP",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Blanco Renaissance",
+                locationName = "Ubud",
+                locationImage = "https://bit.ly/3wFgHnT",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Ullen Sentalu",
+                locationName = "Yogyakarta",
+                locationImage = "https://bit.ly/3z49eAf",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Tsunami Aceh",
+                locationName = "Banda Aceh",
+                locationImage = "https://bit.ly/2UavxFN",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Siwalima",
+                locationName = "Ambon",
+                locationImage = "https://bit.ly/3rdnuUH",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "House of Sampoerna",
+                locationName = "Surabaya",
+                locationImage = "https://bit.ly/3knTCDt",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Geologi",
+                locationName = "Bandung",
+                locationImage = "https://bit.ly/3wKfZ8I",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Rekor Indonesia",
+                locationName = "Semarang",
+                locationImage = "https://bit.ly/3idaA4S",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Museum",
+                name = "Anak Kolong Tangga",
+                locationName = "Yogyakarta",
+                locationImage = "https://bit.ly/2UTFVRX",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+
+        return list
+    }
+
     fun setTemple(): ArrayList<TravelData>{
         val list = ArrayList<TravelData>()
         list.add(
@@ -451,6 +589,98 @@ object DataSources{
                 reviews = null
             )
         )
+
+        return list
+    }
+
+    fun setTopTrips(): ArrayList<TravelData>{
+        val list = ArrayList<TravelData>()
+        list.add(
+            TravelData(
+                category = "Mountains",
+                name = "Rinjani Mount",
+                locationName = "Pulau Lombok, Nusa Tenggara Barat",
+                locationImage = "https://bit.ly/3i2m37q",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Mountains",
+                name = "Bromo Mount",
+                locationName = "Malang, Jawa Timur",
+                locationImage = "https://bit.ly/36AeTBL",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+
+        list.add(
+            TravelData(
+                category = "Mountains",
+                name = "Ijen Mount",
+                locationName = "Bondowoso, Jawa Timur",
+                locationImage = "https://bit.ly/3wFR6ei",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.8,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Beach",
+                name = "Pandawa Beach",
+                locationName = "Pulau Lombok, Nusa Tenggara Barat",
+                locationImage = "https://bit.ly/3rehnPR",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Beach",
+                name = "Senggigi Beach",
+                locationName = "Malang, Jawa Timur",
+                locationImage = "https://bit.ly/3yKsO4q",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Temple",
+                name = "Borobudur Temple",
+                locationName = "Pulau Lombok, Nusa Tenggara Barat",
+                locationImage = "https://bit.ly/36MY1YV",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+        list.add(
+            TravelData(
+                category = "Temple",
+                name = "Prambanan Temple",
+                locationName = "Malang, Jawa Timur",
+                locationImage = "https://bit.ly/2T7Nvbf",
+                openTime = "07.00-16.00 WIB",
+                ratingLocation = 4.9,
+                overview = "",
+                reviews = null
+            )
+        )
+
 
         return list
     }

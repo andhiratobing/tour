@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         getListTopTrips()
-        showRecyclerList()
+        showRecyclerView()
 
         binding.apply {
             btnExplore.setOnClickListener {
@@ -84,11 +84,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun getListTopTrips() {
-        val data = DataSources.setTemple()
+        val data = DataSources.setTopTrips()
         dataTopTripsList.addAll(data)
     }
 
-    private fun showRecyclerList() {
+    private fun showRecyclerView() {
         binding.apply {
             rvTopTrips.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL,false)
             topTripAdapter = TopTripAdapter(dataTopTripsList)
