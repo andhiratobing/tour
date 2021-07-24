@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
     android:backgroundTint="@color/white"
@@ -16,18 +16,17 @@
 
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin16dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/ivImage"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="start"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -59,51 +58,109 @@
                     android:paddingBottom="@dimen/margin4dp"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
-                    android:textSize="@dimen/margin12sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
         </FrameLayout>
-
-
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin16dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="@string/banjir_kanal"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frameLayout" />
 
         <ImageButton
             android:id="@+id/ibFavorite"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/color_background_favorite_red"
             android:contentDescription="@string/image_favorite"
-            android:src="@drawable/ic_favorite_red"
-            app:layout_constraintBottom_toBottomOf="@+id/tvCategoryName"
+            android:src="@drawable/ic_bookmark"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvCategoryName" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/tvCategoryName"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="@dimen/margin16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:hint="@string/camp"
-            android:textColor="@color/color_text"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvName" />
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/frameLayout"
+            app:layout_constraintTop_toTopOf="@+id/frameLayout">
 
 
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/banjir_kanal" />
+
+
+            <TableRow
+                android:id="@+id/tabRowCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@id/tvName">
+
+                <TextView
+                    android:id="@+id/tvTitleCategoryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:text="@string/categories_"
+                    android:textColor="@color/color_text"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/tvCategoryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/color_text"
+                    android:textSize="14sp"
+                    tools:hint="@string/camp" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tabRowLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                app:layout_constraintStart_toStartOf="@+id/tabRowCategories"
+                app:layout_constraintTop_toBottomOf="@+id/tabRowCategories">
+
+                <TextView
+                    android:id="@+id/tvTitleRatingLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rating_location_"
+                    android:textColor="@color/color_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/tvRatingLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/color_text"
+                    android:textSize="14sp"
+                    tools:text="4.9" />
+            </TableRow>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

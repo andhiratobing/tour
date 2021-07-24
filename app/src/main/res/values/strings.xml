@@ -6,6 +6,7 @@
     <string name="where_do_you_want_to_go">Where do you want to go?</string>
     <string name="notification">Notification</string>
     <string name="categories" translatable="false">Categories</string>
+    <string name="categories_" translatable="false">Categories:</string>
     <string name="top_trips">Top trips</string>
     <string name="_120">$120</string>
     <string name="banjir_kanal">Banjir Kanal</string>
@@ -17,6 +18,17 @@
     <string name="account">Account</string>
     <string name="image_favorite">Image Favorite</string>
     <string name="explore">Explore</string>
+    <string name="ratobing6_gmail_com">ratobing6@gmail.com</string>
+    <string name="andhi_ratobing">Andhi Ratobing</string>
+    <string name="data_pengguna">Data pengguna</string>
+    <string name="andhiratobing">andhiratobing</string>
+    <string name="icon_email">Icon email</string>
+    <string name="icon_linkedin">Icon LinkedIn</string>
+    <string name="image_github">Image Github</string>
+    <string name="icon_navigation_right">Icon navigation right</string>
+    <string name="location_">Location:</string>
+    <string name="rating_location_">Rating location:</string>
+    <string name="overview">Overview</string>
 
 
 </resources>
