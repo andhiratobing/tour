@@ -3,14 +3,18 @@ package com.ratobing.tour.ui.fragment.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ratobing.tour.R
 import com.ratobing.tour.databinding.FragmentHomeBinding
 import com.ratobing.tour.models.TourData
-import com.ratobing.tour.ui.activity.NotificationActivity
+import com.ratobing.tour.models.User
+import com.ratobing.tour.ui.fragment.SectionPageCategoriesAdapter
+import com.ratobing.tour.ui.fragment.home.toptrip.DetailTopTripActivity
+import com.ratobing.tour.ui.fragment.home.toptrip.TopTripAdapter
 import com.ratobing.tour.util.DataSources
 
 
@@ -21,6 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var topTripAdapter: TopTripAdapter
     private lateinit var viewPagerAdapter: SectionPageCategoriesAdapter
     private val dataTopTripsList = ArrayList<TourData>()
+    private var dataUser = User()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,27 +38,32 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View {
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         getListTopTrips()
         showRecyclerView()
-
-        binding.apply {
-            btnExplore.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_exploreFragment)
-            }
-        }
-
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnExplore.setOnClickListener {
+            Toast.makeText(activity,"Tunggu fitur selanjutnya ya", Toast.LENGTH_SHORT).show()
+        }
+
         binding.apply {
             //set menu on toolbar
             binding.toolbarFragmentHome.inflateMenu(R.menu.home_menu)
+
+            //Retrive Image
+            Glide.with(view.context)
+                .load(dataUser.imageUser)
+                .placeholder(R.drawable.placeholder_image)
+                .into(binding.imgUser)
 
             //Text TabLayout
             val tabLayoutCategoriesTitle = listOf(
@@ -75,8 +85,6 @@ class HomeFragment : Fragment() {
     }
 
 
-
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.home_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -87,13 +95,30 @@ class HomeFragment : Fragment() {
         dataTopTripsList.addAll(data)
     }
 
+
+    private fun sendData(data: TourData) {
+        //Send data with parcelable
+        val intent = Intent(requireContext(), DetailTopTripActivity::class.java)
+        intent.putExtra(DetailTopTripActivity.EXTRA_TOUR_DATA_TOP_TRIP, data)
+        startActivity(intent)
+    }
+
     private fun showRecyclerView() {
         binding.apply {
-            rvTopTrips.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL,false)
+            rvTopTrips.layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
             topTripAdapter = TopTripAdapter(dataTopTripsList)
             rvTopTrips.adapter = topTripAdapter
             rvTopTrips.setHasFixedSize(true)
             topTripAdapter.notifyDataSetChanged()
+
+            //Click Item
+            topTripAdapter.setOnItemClickCallBack(object : TopTripAdapter.OnItemClickCallBack {
+                override fun onItemClicked(data: TourData) {
+                    sendData(data)
+                }
+
+            })
         }
     }
 
@@ -101,10 +126,7 @@ class HomeFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_notification -> {
-                val intent = Intent(activity, NotificationActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
-                intent.flags = Intent.FLAG_ACTIVITY_NO_HISTORY
-                activity?.startActivity(intent)
+                Toast.makeText(activity, "Tunggu fitur selanjutnya ya", Toast.LENGTH_SHORT).show()
                 return true
             }
         }

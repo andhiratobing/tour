@@ -1,5 +1,6 @@
 package com.ratobing.tour.ui.fragment.home.categories.beaches
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,7 @@ class BeachesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentBeachesBinding.inflate(inflater, container, false)
 
@@ -38,6 +39,13 @@ class BeachesFragment : Fragment() {
         dataBeachesList.addAll(data)
     }
 
+    private fun sendData(data: TourData) {
+        //Send data with parcelable
+        val intent = Intent(requireContext(), DetailBeachesActivity::class.java)
+        intent.putExtra(DetailBeachesActivity.EXTRA_TOUR_DATA_BEACHES,data)
+        startActivity(intent)
+    }
+
     private fun showRecyclerView() {
         binding.apply {
             rvBeachesFragment.layoutManager = LinearLayoutManager(requireActivity())
@@ -45,6 +53,14 @@ class BeachesFragment : Fragment() {
             rvBeachesFragment.adapter = beachesAdapter
             rvBeachesFragment.setHasFixedSize(true)
             beachesAdapter.notifyDataSetChanged()
+
+            //Click Item
+            beachesAdapter.setOnItemClickCallBack(object : BeachesAdapter.OnItemClickCallBack{
+                override fun onItemClicked(data: TourData) {
+                    sendData(data)
+                }
+
+            })
         }
     }
 

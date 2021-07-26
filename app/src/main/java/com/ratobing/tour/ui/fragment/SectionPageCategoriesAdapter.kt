@@ -1,4 +1,4 @@
-package com.ratobing.tour.ui.fragment.home
+package com.ratobing.tour.ui.fragment
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

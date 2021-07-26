@@ -18,7 +18,6 @@
             android:id="@+id/appBarFragmentHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:background="@color/background_white"
             app:elevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +28,7 @@
                 android:id="@+id/toolbarFragmentHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp">
 
@@ -38,9 +38,8 @@
 
                     <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/imgUser"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:src="@drawable/ic_image_user_default"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         app:riv_border_color="@color/white"
                         app:riv_corner_radius="@dimen/margin24dp"
                         app:riv_mutate_background="true"

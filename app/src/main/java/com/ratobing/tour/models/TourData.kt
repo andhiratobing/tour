@@ -1,6 +1,9 @@
 package com.ratobing.tour.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class TourData(
     val category : String,
     val name: String,
@@ -10,4 +13,4 @@ data class TourData(
     val ratingLocation: Double?,
     val price: String?,
     val overview: String?
-)
+):Parcelable

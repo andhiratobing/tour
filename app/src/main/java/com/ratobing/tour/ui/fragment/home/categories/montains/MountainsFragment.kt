@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ratobing.tour.databinding.FragmentMountainsBinding
@@ -18,7 +17,7 @@ class MountainsFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var mountainsAdapter: MountainsAdapter
     private val dataMountainsList = ArrayList<TourData>()
-    private lateinit var extra: Object
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,15 +36,10 @@ class MountainsFragment : Fragment() {
         dataMountainsList.addAll(data)
     }
 
-    private fun showSelectedData(data: TourData) {
-        //Show message click
-        Toast.makeText(requireContext(), data.name, Toast.LENGTH_SHORT).show()
-        //Send data with different activity or fragment
+    private fun sendData(data: TourData) {
+        //Send data with parcelable
         val intent = Intent(requireContext(), DetailMountainsActivity::class.java)
-        intent.putExtra(DetailMountainsActivity.EXTRA_NAME,data.name)
-        intent.putExtra(DetailMountainsActivity.EXTRA_LOCATION_IMAGE,data.locationImage)
-        intent.putExtra(DetailMountainsActivity.EXTRA_PRICE,data.price)
-
+        intent.putExtra(DetailMountainsActivity.EXTRA_TOUR_DATA_MOUNTAINS,data)
         startActivity(intent)
     }
 
@@ -62,7 +56,7 @@ class MountainsFragment : Fragment() {
             //Click Item
             mountainsAdapter.setOnItemClickCallBack(object : MountainsAdapter.OnItemClickCallBack{
                 override fun onItemClicked(data: TourData) {
-                    showSelectedData(data)
+                    sendData(data)
                 }
 
             })

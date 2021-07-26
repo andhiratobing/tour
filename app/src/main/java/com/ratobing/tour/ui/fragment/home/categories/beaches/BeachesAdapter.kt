@@ -11,6 +11,15 @@ import com.ratobing.tour.models.TourData
 class BeachesAdapter(private val beachList: ArrayList<TourData>)
     : RecyclerView.Adapter<BeachesAdapter.BeachesViewHolder>() {
 
+    private lateinit var onItemClickCallBack: OnItemClickCallBack
+
+    interface OnItemClickCallBack {
+        fun onItemClicked(data: TourData)
+    }
+
+    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack){
+        this.onItemClickCallBack = onItemClickCallBack
+    }
 
     inner class BeachesViewHolder(private val binding: ItemTripsBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: TourData){
@@ -35,6 +44,10 @@ class BeachesAdapter(private val beachList: ArrayList<TourData>)
     override fun onBindViewHolder(holder: BeachesViewHolder, position: Int) {
         val data = beachList[position]
         holder.bind(data)
+
+        holder.itemView.setOnClickListener{
+            onItemClickCallBack.onItemClicked(beachList[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int = beachList.size

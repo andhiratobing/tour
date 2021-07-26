@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Travel</string>
+    <string name="app_name">Tour</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
     <string name="name_user">Hi, Andhi Ratobing</string>
@@ -8,9 +8,6 @@
     <string name="categories" translatable="false">Categories</string>
     <string name="categories_" translatable="false">Categories:</string>
     <string name="top_trips">Top trips</string>
-    <string name="_120">$120</string>
-    <string name="banjir_kanal">Banjir Kanal</string>
-    <string name="camp">Camp</string>
     <string name="tabLayoutMountains">Mountains</string>
     <string name="tabLayoutBeaches">Beaches</string>
     <string name="tabLayoutTemple">Temple</string>
@@ -18,17 +15,20 @@
     <string name="account">Account</string>
     <string name="image_favorite">Image Favorite</string>
     <string name="explore">Explore</string>
-    <string name="ratobing6_gmail_com">ratobing6@gmail.com</string>
-    <string name="andhi_ratobing">Andhi Ratobing</string>
     <string name="data_pengguna">Data pengguna</string>
-    <string name="andhiratobing">andhiratobing</string>
     <string name="icon_email">Icon email</string>
     <string name="icon_linkedin">Icon LinkedIn</string>
     <string name="image_github">Image Github</string>
     <string name="icon_navigation_right">Icon navigation right</string>
-    <string name="location_">Location:</string>
     <string name="rating_location_">Rating location:</string>
     <string name="overview">Overview</string>
+    <string name="rating_location">Rating Location</string>
+    <string name="open_time">Open time</string>
+    <string name="see_maps">See Maps</string>
+    <string name="belum_ada_data_tunggu_fiturnya_ya">Belum ada data, tunggu fiturnya ya</string>
+    <string name="image_splash_screen">Image Splash Screen</string>
+    <string name="icon_open_time">Icon Open Time</string>
+    <string name="icon_rating_location">Icon Rating Location</string>
 
 
 </resources>

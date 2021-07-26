@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".ui.fragment.favorite.FavoriteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:text="Fragment Favorite" />
+        android:text="@string/belum_ada_data_tunggu_fiturnya_ya"
+        android:textColor="@color/color_text"
+        android:textSize="16sp" />
 
 </FrameLayout>

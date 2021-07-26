@@ -1,4 +1,4 @@
-package com.ratobing.tour
+package com.ratobing.tour.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.ratobing.tour.R
 import com.ratobing.tour.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

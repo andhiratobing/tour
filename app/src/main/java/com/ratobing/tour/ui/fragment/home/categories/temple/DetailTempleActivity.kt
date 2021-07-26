@@ -1,4 +1,4 @@
-package com.ratobing.tour.ui.fragment.home.categories.montains
+package com.ratobing.tour.ui.fragment.home.categories.temple
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,12 +9,11 @@ import com.ratobing.tour.R
 import com.ratobing.tour.databinding.ActivityDetailTripsBinding
 import com.ratobing.tour.models.TourData
 
-class DetailMountainsActivity : AppCompatActivity() {
-
+class DetailTempleActivity: AppCompatActivity()  {
     private lateinit var binding: ActivityDetailTripsBinding
 
     companion object{
-        const val EXTRA_TOUR_DATA_MOUNTAINS = "extra_tour_data_mountains"
+        const val EXTRA_TOUR_DATA_TEMPLE = "extra_tour_data_temple"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,7 @@ class DetailMountainsActivity : AppCompatActivity() {
 
 
         //get data with Parcelable
-        val data: TourData = intent.getParcelableExtra(EXTRA_TOUR_DATA_MOUNTAINS)!!
+        val data: TourData = intent.getParcelableExtra(EXTRA_TOUR_DATA_TEMPLE)!!
 
         binding.apply {
             //Set toolbar with value
@@ -33,7 +32,7 @@ class DetailMountainsActivity : AppCompatActivity() {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
             tvName.text = data.name
-            Glide.with(this@DetailMountainsActivity)
+            Glide.with(this@DetailTempleActivity)
                 .load(data.locationImage)
                 .placeholder(R.drawable.placeholder_image)
                 .into(ivImage)

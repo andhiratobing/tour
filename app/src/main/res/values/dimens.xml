@@ -11,7 +11,6 @@
 
     <!--Dimens sp-->
     <dimen name="margin12sp">12sp</dimen>
-    <dimen name="margin18sp">18sp</dimen>
 
 
 </resources>

@@ -12,9 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Travel">
-        <activity android:name="com.ratobing.tour.ui.fragment.home.categories.montains.DetailMountainsActivity"></activity>
-        <activity android:name="com.ratobing.tour.ui.activity.NotificationActivity" />
-        <activity android:name="com.ratobing.tour.MainActivity">
+
+        <activity android:name=".ui.fragment.home.categories.beaches.DetailBeachesActivity" />
+        <activity android:name=".ui.fragment.home.categories.montains.DetailMountainsActivity" />
+        <activity android:name=".ui.fragment.home.categories.museum.DetailMuseumActivity" />
+        <activity android:name=".ui.fragment.home.categories.temple.DetailTempleActivity" />
+        <activity android:name=".ui.fragment.home.toptrip.DetailTopTripActivity" />
+        <activity android:name=".ui.activity.MainActivity"/>
+            <activity android:name="com.ratobing.tour.ui.activity.splashscreen.SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

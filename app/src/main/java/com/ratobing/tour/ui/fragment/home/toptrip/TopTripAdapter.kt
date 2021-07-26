@@ -1,4 +1,4 @@
-package com.ratobing.tour.ui.fragment.home
+package com.ratobing.tour.ui.fragment.home.toptrip
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,6 +11,17 @@ import com.ratobing.tour.models.TourData
 class TopTripAdapter(private var topTrip: ArrayList<TourData>):
     RecyclerView.Adapter<TopTripAdapter.TopTripViewHolder>(){
 
+    private lateinit var onItemClickCallBack: OnItemClickCallBack
+
+    interface OnItemClickCallBack {
+        fun onItemClicked(data: TourData)
+    }
+
+    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack){
+        this.onItemClickCallBack = onItemClickCallBack
+    }
+
+
     inner class TopTripViewHolder(private var binding: ItemTopTripsBinding)
         : RecyclerView.ViewHolder(binding.root)  {
             fun bind(data: TourData){
@@ -18,9 +29,6 @@ class TopTripAdapter(private var topTrip: ArrayList<TourData>):
                     tvName.text = data.name
                     tvCategoryName.text = data.category
 
-
-//                    val requestOptions = RequestOptions().placeholder(R.drawable.ic_launcher_background)
-//                        .error(R.drawable.ic_launcher_background)
 
                     Glide.with(itemView.context)
                         .load(data.locationImage)
@@ -38,6 +46,10 @@ class TopTripAdapter(private var topTrip: ArrayList<TourData>):
     override fun onBindViewHolder(holder: TopTripViewHolder, position: Int) {
         val dataTopTrips = topTrip[position]
         holder.bind(dataTopTrips)
+
+        holder.itemView.setOnClickListener{
+            onItemClickCallBack.onItemClicked(topTrip[holder.adapterPosition])
+        }
     }
 
     override fun getItemCount(): Int = topTrip.size

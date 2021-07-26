@@ -1,5 +1,6 @@
 package com.ratobing.tour.ui.fragment.home.categories.museum
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,7 @@ class MuseumFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentMuseumBinding.inflate(inflater, container, false)
 
@@ -36,13 +37,28 @@ class MuseumFragment : Fragment() {
         dataMuseumList.addAll(data)
     }
 
-    fun showRecyclerView(){
+    private fun sendData(data: TourData) {
+        //Send data with parcelable
+        val intent = Intent(requireContext(), DetailMuseumActivity::class.java)
+        intent.putExtra(DetailMuseumActivity.EXTRA_TOUR_DATA_MUSEUM,data)
+        startActivity(intent)
+    }
+
+    private fun showRecyclerView(){
         binding.apply {
             rvMuseumFragment.layoutManager = LinearLayoutManager(requireActivity())
             museumAdapter = MuseumAdapter(dataMuseumList)
             rvMuseumFragment.adapter = museumAdapter
             rvMuseumFragment.setHasFixedSize(true)
             museumAdapter.notifyDataSetChanged()
+
+            //Click Item
+            museumAdapter.setOnItemClickCallBack(object : MuseumAdapter.OnItemClickCallBack{
+                override fun onItemClicked(data: TourData) {
+                    sendData(data)
+                }
+
+            })
         }
 
     }

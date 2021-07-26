@@ -11,6 +11,15 @@ import com.ratobing.tour.models.TourData
 class MuseumAdapter(private val dataMuseumList: ArrayList<TourData>):
     RecyclerView.Adapter<MuseumAdapter.MuseumViewHolder>() {
 
+    private lateinit var onItemClickCallBack: OnItemClickCallBack
+
+    interface OnItemClickCallBack {
+        fun onItemClicked(data: TourData)
+    }
+
+    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack){
+        this.onItemClickCallBack = onItemClickCallBack
+    }
 
     inner class MuseumViewHolder(private val binding: ItemTripsBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: TourData){
@@ -35,6 +44,11 @@ class MuseumAdapter(private val dataMuseumList: ArrayList<TourData>):
     override fun onBindViewHolder(holder: MuseumViewHolder, position: Int) {
         val data = dataMuseumList[position]
         holder.bind(data)
+
+        holder.itemView.setOnClickListener{
+            onItemClickCallBack.onItemClicked(dataMuseumList[holder.adapterPosition])
+        }
+
     }
 
     override fun getItemCount(): Int = dataMuseumList.size

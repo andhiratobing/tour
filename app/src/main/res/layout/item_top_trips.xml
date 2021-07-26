@@ -36,8 +36,7 @@
                 app:riv_border_color="#333333"
                 app:riv_corner_radius="20dp"
                 app:riv_mutate_background="true"
-                app:riv_oval="false"
-                tools:src="@drawable/img_sample1" />
+                app:riv_oval="false"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -51,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:hint="@string/_120"
+                    tools:text="$12"
                     android:letterSpacing="0.09"
                     android:paddingStart="@dimen/margin12dp"
                     android:paddingTop="@dimen/margin4dp"
@@ -71,7 +70,7 @@
             android:paddingStart="@dimen/margin16dp"
             android:paddingEnd="@dimen/margin16dp"
             android:fontFamily="@font/poppins_semibold"
-            android:hint="@string/banjir_kanal"
+            tools:text="Borobudur"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,9 +81,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/color_background_favorite_red"
             android:contentDescription="@string/image_favorite"
-            android:src="@drawable/ic_bookmark"
+            android:background="@drawable/ic_bookmark"
             app:layout_constraintBottom_toBottomOf="@+id/tvCategoryName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tvCategoryName" />
@@ -99,7 +97,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="@dimen/margin16dp"
             android:fontFamily="@font/poppins_medium"
-            android:hint="@string/camp"
+            tools:text="Temple"
             android:textColor="@color/color_text"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"

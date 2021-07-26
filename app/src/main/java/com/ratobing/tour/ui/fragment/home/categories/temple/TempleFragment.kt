@@ -1,5 +1,6 @@
 package com.ratobing.tour.ui.fragment.home.categories.temple
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,13 @@ class TempleFragment : Fragment() {
         dataTempleList.addAll(data)
     }
 
+    private fun sendData(data: TourData) {
+        //Send data with parcelable
+        val intent = Intent(requireContext(), DetailTempleActivity::class.java)
+        intent.putExtra(DetailTempleActivity.EXTRA_TOUR_DATA_TEMPLE,data)
+        startActivity(intent)
+    }
+
     private fun showRecyclerView() {
         binding.apply {
             rvTempleFragment.layoutManager = LinearLayoutManager(requireActivity())
@@ -42,6 +50,14 @@ class TempleFragment : Fragment() {
             rvTempleFragment.adapter = templeAdapter
             rvTempleFragment.setHasFixedSize(true)
             templeAdapter.notifyDataSetChanged()
+
+            //Click Item
+            templeAdapter.setOnItemClickCallBack(object : TempleAdapter.OnItemClickCallBack{
+                override fun onItemClicked(data: TourData) {
+                    sendData(data)
+                }
+
+            })
         }
     }
 

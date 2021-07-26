@@ -11,6 +11,16 @@ import com.ratobing.tour.models.TourData
 class TempleAdapter(private val templeList: ArrayList<TourData>)
     : RecyclerView.Adapter<TempleAdapter.TempleViewHolder>(){
 
+    private lateinit var onItemClickCallBack: OnItemClickCallBack
+
+    interface OnItemClickCallBack {
+        fun onItemClicked(data: TourData)
+    }
+
+    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack){
+        this.onItemClickCallBack = onItemClickCallBack
+    }
+
     class TempleViewHolder(private val binding: ItemTripsBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: TourData){
             with(binding){
@@ -34,6 +44,10 @@ class TempleAdapter(private val templeList: ArrayList<TourData>)
     override fun onBindViewHolder(holder: TempleViewHolder, position: Int) {
         val data = templeList[position]
         holder.bind(data)
+
+        holder.itemView.setOnClickListener{
+            onItemClickCallBack.onItemClicked(templeList[holder.adapterPosition])
+        }
 
     }
 
